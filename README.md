@@ -14,8 +14,8 @@ The **version number** of this images is composed of two version numbers
 
 `chiabre/konkart_jmx_exporter`
 
-* Find Images of this repo on [docker hub](https://hub.docker.com/repository/docker/chiabre/konkart_jmx_exporter)
-* Find repo of this images on [github](https://github.com/chiabre/konkart_jmx_exporter)
+* Find Images of this repo on [docker hub](https://hub.docker.com/repository/docker/chiabre/konakart_jmx_exporter)
+* Find repo of this images on [github](https://github.com/chiabre/konakart_jmx_exporter)
 
 In addition to the [official Konakart images](https://hub.docker.com/r/konakart):
 * JMX to Prometheus exporter metrics on port 9404
