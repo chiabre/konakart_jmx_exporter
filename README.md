@@ -32,29 +32,29 @@ In addition to the [official Konakart images](https://hub.docker.com/r/konakart)
 
 ### Build
 
-`build.sh`
+```bash
+build.sh
+```
 
-### Run (docker run)
+### Run
 
 ```bash
 docker run -d -p 8780:8780 -p 9404:9404 chiabre/konkart_jmx_exporter
 ```
 
-The Konakart store ui will be available on port `8780`:
+Konakart store ui will be available on port `8780`:
 
 * http://[KONAKART_SERVER]:8780
 
-while the admin ui will be available at the following url:
+Prometheus JMX exporter metrics will be available on port `9404`:
+
+* http://[KONAKART_SERVER]:9404/metrics/
+
+Konakart admin ui will be available at the following url:
 
 * http://[KONAKART_SERVER]:8780/konakartadmin/
 
 (login using "admin@konakart.com" as the username and "princess" as the password)
-
-#### JVM_OPTS Prometheus JMX exporter
-
-The Prometheus JMX exporter metrics will be available on port `9404`:
-
-* http://[KONAKART_SERVER]:9404/metrics/
 
 #### JVM_OPTS
 
