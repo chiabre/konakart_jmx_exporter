@@ -19,7 +19,7 @@ The **version number** of this images is composed of two version numbers
 
 In addition to the [official Konakart images](https://hub.docker.com/r/konakart):
 * JMX to Prometheus exporter metrics on port 9404
-* JVM_OPTS as ENV variable (dafeult JAVA_OPTS="-Xmx1400m -Xms400m")
+* JVM_OPTS as ENV. variable (dafeult JAVA_OPTS="-Xmx1400m -Xms400m")
 
 ### Supported tags
 
@@ -28,50 +28,38 @@ In addition to the [official Konakart images](https://hub.docker.com/r/konakart)
 * Konakart Community Edition 9200 (Java 8 and PostgreSQL 9.4) + JMX to Prometheus exporter 0.15
    * `9200-0.15`
 
-
 ## How to use this image
 
-### Build using
+### Build
 
 `build.sh`
 
-### Run using
+### Run (docker run)
 
-`docker run -d -p 8780:8780 -p 9404:9404 -e JAVA_OPTS="[YOUR JAVA OPTS]" chiabre/konkart_jmx_exporter`
+```bash
+docker run -d -p 8780:8780 -p 9404:9404 -e JAVA_OPTS="[YOUR JAVA OPTS]" chiabre/konkart_jmx_exporter
+```
 
-The store ui is at:
+The Konakart store ui will be available on port `8780`:
 
-http://[KONAKART]:8780/konakart/
+http://[KONAKART_SERVER]:8780
 
-The admin ui is at:
+while the admin ui will be available at the following url:
 
-http://[KONAKART]:8780/konakartadmin/
+http://[KONAKART_SERVER]:8780/konakartadmin/
 
 (login using "admin@konakart.com" as the username and "princess" as the password)
 
-The Prometheus JMX exporter metrics are at:
+#### JVM_OPTS Prometheus JMX exporter
 
-http://[KONAKART]:9404/metrics/
+The Prometheus JMX exporter metrics will be available on port `9404`:
 
-### Docker swarm sample
+http://[KONAKART_SERVER]:9404/metrics/
 
-```dockercompose
-version: "3.8"
-services:
-  konakart:
-    image: chiabre/konkart_jmx_exporter
-    deploy:
-      restart_policy:
-        condition: none
-      resources:
-        reservations:
-          cpus: '4'
-          memory: 4096m
-        limits:
-          cpus: '4'
-          memory: 4096m
-    ports:
-    - 8780:8780
-    - 9404:9404
-    environment:
-    - JAVA_OPTS="[YOUR JAVA OPTS]"```
+#### JVM_OPTS
+
+To set the `JVM_OPTS` use the `JAVA_OPTS` ENV. variable as in the following example
+
+```bash
+docker run -d -p 8780:8780 -p 9404:9404 -e JAVA_OPTS="[YOUR JAVA OPTS]" chiabre/konkart_jmx_exporter`
+```
