@@ -1,10 +1,10 @@
-ARG KONAKART_VERSION="9400_ce"
+ARG KONAKART_VERSION="9600_ce"
 
 FROM konakart/konakart_${KONAKART_VERSION}:latest
 
 LABEL maintainer="luca.chiabrera@gmail.com"
 
-ARG JMX_EXPORTER_VERSION="0.15.0"
+ARG JMX_EXPORTER_VERSION="0.6.2"
 
 ENV JAVA_OPTS "-Xmx1400m -Xms400m"
 
