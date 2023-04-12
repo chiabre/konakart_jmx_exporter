@@ -23,7 +23,7 @@ In addition to the [official Konakart images](https://hub.docker.com/r/konakart)
 
 ### Supported tags
 
-* Konakart Community Edition 9400 (Java 11 and PostgreSQL 10) + JMX to Prometheus exporter 0.18.0
+* Konakart Community Edition 9600 (Java 11 and PostgreSQL 10) + JMX to Prometheus exporter 0.18.0
    * `latest`, `9600-0.18.0`
 * Konakart Community Edition 9400 (Java 11 and PostgreSQL 10) + JMX to Prometheus exporter 0.15
    * `9400-0.15`
